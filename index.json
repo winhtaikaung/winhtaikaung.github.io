@@ -1,3 +1,19 @@
 {
-  "name":"Win Htaik Aung"
+  "basics": {
+    "name": "Win Htaik Aung",
+    "label": "Software engineer with 6 years of industry experience and currently working with Android and  React.js with redux for native mobile apps and SPAs. For back end currently working with Python.  Proficient in object-oriented design, data structures, problem solving, complexity analysis, and debugging. Produce clean, maintainable and testable code with various testing approaches.  I love python but I am willing to pick up new languages as I believe language is a presentational syntax for what we want to do.  I would love to discuss about my experiences with you.Please feel free to reach me at winhtaikaung28@hotmail.com for quick chat .",
+    "picture": "",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "summary": "Media Production",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "",
+      "countryCode": "SG",
+      "region": ""
+    },
+    "profiles": []
+  }
 }
