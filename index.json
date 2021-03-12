@@ -1,19 +1,334 @@
 {
   "basics": {
     "name": "Win Htaik Aung",
-    "label": "Software engineer with 6 years of industry experience and currently working with Android and  React.js with redux for native mobile apps and SPAs. For back end currently working with Python.  Proficient in object-oriented design, data structures, problem solving, complexity analysis, and debugging. Produce clean, maintainable and testable code with various testing approaches.  I love python but I am willing to pick up new languages as I believe language is a presentational syntax for what we want to do.  I would love to discuss about my experiences with you.Please feel free to reach me at winhtaikaung28@hotmail.com for quick chat .",
+    "label": "Software Engineer @ EzySign",
     "picture": "",
-    "email": "",
+    "email": "winhtaikaung28@hotmail.com",
     "phone": "",
     "website": "",
-    "summary": "Media Production",
+    "summary": "Software engineer with 7 years of industry experience and currently working with  React.js with redux for frontend development. For back end currently working with Golang.\n\nProficient in object-oriented design, data structures, problem solving, complexity analysis, and debugging. Produce clean, maintainable and testable code with various testing approaches.\n\nI love python but I am willing to pick up new languages as I believe language is a presentation syntax for what we want to do.\n\nI would love to discuss about my experiences with you.Please feel free to reach me at winhtaikaung28@hotmail.com for quick chat .",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "",
-      "countryCode": "SG",
-      "region": ""
+      "countryCode": "US",
+      "address": "Singapore"
     },
-    "profiles": []
-  }
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "win-htaik-aung-9a08a196",
+        "url": "https://www.linkedin.com/in/win-htaik-aung-9a08a196/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "90 Seconds",
+      "endDate": "",
+      "highlights": [],
+      "position": "Software Engineer",
+      "startDate": "2019-03-31",
+      "website": "https://www.linkedin.com/company/90-seconds/"
+    },
+    {
+      "company": "EzySign",
+      "endDate": "",
+      "highlights": [],
+      "position": "Founder",
+      "startDate": "2019-11-30",
+      "website": "https://www.linkedin.com/company/ezysign/"
+    },
+    {
+      "company": "Perx Technologies",
+      "endDate": "2019-03-31",
+      "highlights": [],
+      "position": "Frontend Engineer",
+      "startDate": "2017-05-31",
+      "summary": "Maintain and develop existing android app and develop whitelabled apps for customers. \nDevelop microsites using liquid template engine and Single Page Applications(SPA) with React -redux. \nCooperate with backend developers to design the API.\nDeliver fully tested native apps via Crashlytics Beta and upload to PlayStore.",
+      "website": "https://www.linkedin.com/company/perx/"
+    },
+    {
+      "company": "Global DataBank Group Inc. (GDBG)",
+      "endDate": "2017-05-31",
+      "highlights": [],
+      "position": "Mobile Application Developer",
+      "startDate": "2016-08-31",
+      "website": "https://www.linkedin.com/company/global-databank-group-ltd-/"
+    },
+    {
+      "company": "Crayon Data",
+      "endDate": "2016-08-31",
+      "highlights": [],
+      "position": "Android Developer",
+      "startDate": "2016-03-31",
+      "website": "https://www.linkedin.com/company/crayondata/"
+    },
+    {
+      "company": "Myanmar Plus",
+      "endDate": "2016-01-31",
+      "highlights": [],
+      "position": "Android Developer",
+      "startDate": "2014-12-31",
+      "website": ""
+    },
+    {
+      "company": "Population Services International",
+      "endDate": "2015-12-31",
+      "highlights": [],
+      "position": "Android Consultant",
+      "startDate": "2015-07-31",
+      "website": "https://www.linkedin.com/company/population-services-international/"
+    },
+    {
+      "company": "Bama Learn Burmese",
+      "endDate": "2015-07-31",
+      "highlights": [],
+      "position": "Android Developer",
+      "startDate": "2015-05-31",
+      "website": ""
+    },
+    {
+      "company": "DHIS2",
+      "endDate": "2015-12-31",
+      "highlights": [],
+      "position": "Training",
+      "startDate": "2015-12-31",
+      "summary": "Discuss and Share knowledge About DHIS2 Android Sdk",
+      "website": ""
+    },
+    {
+      "company": "7th Computing",
+      "endDate": "2014-09-30",
+      "highlights": [],
+      "position": "Android Developer",
+      "startDate": "2014-01-31",
+      "website": ""
+    },
+    {
+      "company": "District health information system",
+      "endDate": "2013-12-31",
+      "highlights": [],
+      "position": "Frontend Developer",
+      "startDate": "2013-07-31",
+      "summary": "Designing web page\n\nCreating client side mvc application with Angular.js\n\nCreating dynamic map with Ajax & leaflet.js",
+      "website": ""
+    },
+    {
+      "company": "ThiriJ Software House",
+      "endDate": "2013-05-31",
+      "highlights": [],
+      "position": "Senior Programmer",
+      "startDate": "2012-07-31",
+      "summary": "Develop E-commerce Website with ASP.net MVC 2 and C#.\nCreate database Store procedures in MSSQL and administration of database.\nCrafting user Interface for both admin panel and client side with jquery and bootstrap.\nTesting and bug fixing on demand.",
+      "website": ""
+    },
+    {
+      "company": "Star Vision Pteltd",
+      "endDate": "2012-05-31",
+      "highlights": [],
+      "position": "Junior Programmer",
+      "startDate": "2011-12-31",
+      "summary": "Create Database Modules with SQL Server 2005,\nCreate Store Procedure,Triggers,CURSOR,\nCreate Program Modules with VB.6.0 & VB.net",
+      "website": ""
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "BEHS(1) Latha",
+      "area": "",
+      "studyType": "",
+      "startDate": "1995-12-31",
+      "endDate": "2007-12-31",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "University of Greenwich",
+      "area": "Business Information Technology",
+      "studyType": "B.Sc (Hons)",
+      "startDate": "2014-12-31",
+      "endDate": "2016-12-31",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "University of East Yangon",
+      "area": "",
+      "studyType": "Bachelor of Physics",
+      "startDate": "2007-12-31",
+      "endDate": "2011-12-31",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "University of Greenwich",
+      "area": "Information Technology",
+      "studyType": "International Advance Diploma in Computer Studies",
+      "startDate": "2009-12-31",
+      "endDate": "2011-12-31",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "University of Greenwich",
+      "area": "Information Technology",
+      "studyType": "International Diploma In Computer Studies(IDCS)",
+      "startDate": "2008-12-31",
+      "endDate": "2009-12-31",
+      "gpa": "",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "JavaScript",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "React-redux",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "TypeScript",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Android Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Agile Project Management",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Software Project Management",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Web Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "jQuery",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "MySQL",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "CSS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Git",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Linux",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "HTML5",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SQLite",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "HTML 5",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Node.js",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Docker",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Unix Shell Scripting",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Networking",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Linux KVM",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "OpenVZ",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "DSDM",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Perx Technologies",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "language": "en",
+      "fluency": "Native Speaker"
+    }
+  ],
+  "interests": [],
+  "references": [
+    {
+      "name": "Razeem Habeeb Mohamed",
+      "reference": "Win in one individual who uniquely stands out among other peers. During our time together, I have seen him displayed great talents in full stack software development. It’s not just his technical skills that impress me, however he is joy to work with and easy going. His can-do attitude and team-building skills were also necessary and valued not just by myself, but by his peers, who often relied on him to get the job done. Win is charismatic, creative and confident. "
+    },
+    {
+      "name": "William Afendy",
+      "reference": "I had the pleasure of working with Win for 9 months, collaborating on couple of projects. He was a good all around polyglot developer, a rare find I must say. His only weakness was his tummy. Do not let this man go hungry, he needs all the energy to power his brain.  \n\nWin was very dedicated to his work. Not only he had a positive attitude, but also a passion to produce high quality work. \n\nWin would be a great asset to any team. A wonderful team player, could be potentially a great team leader one day."
+    },
+    {
+      "name": "Warren Woo",
+      "reference": "Win Htaik Aung is an extremely humble yet talented engineer; whose versatility and range of front-end technologies made it possible for Perx to deliver enterprise-grade progressive web apps (PWAs) that both surprise-and-delight clients and their end-users.\n\nDuring the time we were working together, I have always admired Win's passion and dedication towards continuous learning - picking up DevOps, Kubernetes, and functional programming - as well as, taking the opportunity to coach and mentor younglings in the agile ways-of-working.\n\nIf Win's past performance is any indication of his future prospects, I am certain that Win will definitely be an invaluable asset to whomever he chooses to ply his trade with."
+    },
+    {
+      "name": "Bruce Wang",
+      "reference": "In any roles he is given, he often gives a lot more beyond his defined role. Win is one of the most adaptable developer I have worked with. He went from a junior role working on large RDBMS system in a bank, to an Android developer. When we wind down our mobile apps operation in Perx, he switched to be a hybrid mobile app developer subsequently a React front end developer. In 90seconds, he was picking up enough DevOps knowledge to deal with kubernetes development. So when our last dedicated DevOps left the company, win was incredibly helpful in handling all the DevOps related work. \n\nHis maturity and versality are great for the business. He is always considerate when it comes to engineering approach which makes him one of the easiest developer to work with great pleasure. I’m certainly looking forward to work together with him again in the future."
+    },
+    {
+      "name": "Huy Hoàng Phạm",
+      "reference": "Win is an excellent engineer to have on the team. Not only he has strong technical skills in Rails and ReactJS, but he also has good soft-skills. He is diligent, good attention to details, and the team can count on him to get the works done. Win also knows how to cooperate with stakeholders, designers, and product managers. \nAside from his works, he also spends time mentoring junior members of the team, to get them up to speed and increase the team's productivity. Personally-wise, Win is very friendly, helpful and fun to work with. I would strongly recommend Win to any team that wants a dedicated and friendly member for their team."
+    }
+  ]
 }
