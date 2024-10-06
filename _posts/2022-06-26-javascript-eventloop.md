@@ -1,5 +1,5 @@
 ---
-title: Poorman way of Application Localization 
+title: Javascript ရဲ့ Event Loop မှာပါတဲ့ Task Queue ဘယ်လိုအလုပ်လုပ်လဲ။ 
 description: Javascript က Single Threaded language နဲ့ အလုပ်လုပ်တယ် ဆိုတာ ကိုအားလုံးသိကြပြီးဖြစ်မှာပါ။ သို့ပေမယ့် ကျနော်တို့ အများစုသိထားတာက Javascript က Single Threaded ပေမယ့် Concurrent အလုပ်လုပ်လို့ ရအောင် Event Loop ကိုသုံးထားတယ်ဆိုတဲ့ အချက်ပေါ့။ Event Loop ရဲ့ အတွင်းကျကျ အသေးစိတ်အားလုံးကိုနားမလည်ရင်တောင် Event Loop ကိုတော့ နားလည်ထားရင် ကျနော်တို့ အနေနဲ့ Javascript ရေးသားရာမှာ asynchronous operation ပိုပြီး လွယ်လွယ်ကူကူ လုပ်ဆောင်နိုင်ပါလိမ့်မယ်။Event Loop ကိုနားလည်လွယ်အောင် အပေါယံအားဖြင့် သုံးပိုင်းခွဲထားပါတယ်။
 
 author: winhtaikaung 
