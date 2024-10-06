@@ -9,7 +9,7 @@ pin: true
 math: true
 mermaid: true
 image:
-  path: https://miro.medium.com/v2/resize:fill:88:88/1*Z1k4D71oddMKpJLJhiikJg.jpeg
+  path: https://miro.medium.com/v2/resize:fit:4800/format:webp/0*42DnbERXncyIWCB3
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
   alt: AWS reserved instance & Saving Plans
 ---
