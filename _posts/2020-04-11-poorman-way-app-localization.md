@@ -37,7 +37,7 @@ Here we can use third party services like
 1.  [Phrase](https://phrase.com/)( Formerly Phraseapp) *the one I used to love the most
 2.  [LingoHub](https://lingohub.com/)
 3.  [Crowdin](https://crowdin.com/)
-4.  [POEditor](http://poeditor.com)
+4.  [POEditor](https://poeditor.com)
 
 and many other services.
 
