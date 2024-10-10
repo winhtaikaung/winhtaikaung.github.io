@@ -121,8 +121,8 @@ comments:
   giscus:
     repo: winhtaikaung/winhtaikaung.github.io # <gh-username>/<repo>
     repo_id: "MDEwOlJlcG9zaXRvcnkxODA2ODU0OTY="
-    category:
-    category_id:
+    category: "General"
+    category_id: "DIC_kwDOCsUKuM4CjPQn"
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
