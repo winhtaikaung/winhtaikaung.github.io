@@ -120,7 +120,7 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: winhtaikaung/winhtaikaung.github.io # <gh-username>/<repo>
-    repo_id:
+    repo_id: "MDEwOlJlcG9zaXRvcnkxODA2ODU0OTY="
     category:
     category_id:
     mapping: # optional, default to 'pathname'
