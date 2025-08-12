@@ -10,8 +10,6 @@ math: true
 mermaid: true
  
 ---
-## From Docker to the Cloud: A Group Project Saga of Code, Chaos, and Continuous Delivery
-
 Every so often in a developer's journey, a project comes along that’s more than just a list of requirements; it's a gauntlet. For my team, that was deploying a bookstore application. The mission seemed simple: take a Node.js app from a local machine to the cloud. But this five-phase odyssey would test our technical skills, our patience, and our ability to collaborate under pressure. It was a story of code, cloud, and a little bit of chaos.
 
 ### Chapter 1: The Blueprint and the First Hurdle
@@ -21,6 +19,11 @@ Our journey began with laying the foundation: Continuous Integration (CI). The g
 Setting up the initial Node.js workflow was straightforward. But the first real challenge emerged when we needed to integrate a database for our tests. Our application required MySQL, so our CI pipeline needed it too. The solution was to run MySQL as a *service container* within our GitHub Actions job. This meant our CI environment would spin up a temporary, isolated MySQL database just for the test run. It was a neat, self-contained solution, but it demanded precision—matching Node and MySQL versions, handling port mapping, and, most critically, managing credentials securely using GitHub Secrets. After a bit of tinkering, our `ci.yml` file was humming, and our pull requests glowed with the comforting green checkmark of a successful run.
 
 However, a different kind of challenge was brewing. One of our team members had gone silent. Deadlines wait for no one, so we made the tough call to press on, documenting our progress and communication meticulously in Microsoft Teams. It was our first lesson in project management: adapt and keep moving.
+
+![Our Git commits](./assets/2025-08-12-from-saga-to-cloud-chaos-and-continuous-delivery/githubactions.png)
+*(Image: A conceptual view of a Cloud SQL instance configuration in the GCP console.)*
+
+Our Docker Commits 
 
 ### Chapter 2: Taming the Docker Whale
 
