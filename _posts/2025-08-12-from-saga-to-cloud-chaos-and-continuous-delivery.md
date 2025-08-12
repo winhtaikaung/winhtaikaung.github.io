@@ -42,27 +42,33 @@ My task was to write the `Dockerfile`. It felt like writing a recipe for our app
 Here's a snippet of our `Dockerfile`:
 
 ```docker
-# Use an official Node.js runtime as a parent image
-FROM node:18-slim
+FROM node:22.15.1-alpine3.20
 
-# Create and change to the app directory
+# Set the working directory inside the container
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json
-# This leverages Docker's build cache
+
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+
 COPY package*.json ./
 
-# Install production dependencies
-RUN npm ci --omit=dev
+# Install only production dependencies
+RUN npm ci --only=production && \
+    npm cache clean --force
 
-# Bundle app source
+# Copy the rest of the application source code
 COPY . .
 
-# Inform Docker that the container is listening on port 8080
+# Change ownership of the app directory to the nodejs user
+RUN chown -R nodejs:nodejs /usr/src/app
+
+USER nodejs
+
 EXPOSE 8080
 
-# Define the command to run the application
-CMD [ "node", "server.js" ]
+CMD ["node","server.js"]
 ```
 
 With the Dockerfile complete, I confidently added a step to our CI workflow to build the image. And… it failed. Over and over. After a frustrating hour, I found the culprit: a typo in my local test command that I had mentally transferred to the `CMD` instruction. It was a humbling reminder that automation is powerful, but it only does exactly what you tell it to do. One corrected line later, our CI pipeline was not just testing our code but successfully building a production-ready Docker image with every commit.
@@ -79,8 +85,6 @@ Our application was now neatly packaged in a container, ready for deployment. Ou
 
 The initial setup of Cloud SQL was a breeze, but our joy was short-lived. When we deployed our application to Cloud Run, it couldn't connect to the database. We were hit with a wall of connection errors. This began a three-hour debugging odyssey deep into the heart of GCP's IAM (Identity and Access Management) and secret management. The documentation felt like a labyrinth. The issue? Our Cloud Run service didn't have the correct permissions to access the Cloud SQL instance, and we were struggling to pass the database password to it securely. The solution finally clicked: we had to use GCP's Secret Manager to store our database password and then grant the Cloud Run service's specific service account the roles of "Cloud SQL Client" and "Secret Manager Secret Accessor." It was a complex dance of permissions that taught us a valuable lesson: in the cloud, security and identity are everything.
 
-![A conceptual screenshot showing the Cloud SQL instance details page in the GCP console, highlighting the instance ID, region, and public IP address.](https://storage.googleapis.com/gweb-cloudblog-publish/images/Optimize-MySQL-performance-with-Cloud-SQL.max-1600x1600.jpg)
-*(Image: A conceptual view of a Cloud SQL instance configuration in the GCP console.)*
 
 **The Pros and Cons of a Cloud Provider**
 
