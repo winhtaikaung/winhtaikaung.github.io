@@ -2,7 +2,7 @@
 title:  The Day I Learned How Computers See Negative Numbers \:A 4-Bit Journey into Two's Complement
 description: Understanding how the negative numbers were stored in binary system. 
 author: winhtaikaung 
-date: 2025-10-24 11:33:00 +0800
+date: 2025-10-23 11:33:00 +0800
 categories: [CS]
 tags: [Binary,NumberSystem, CS]
 pin: false
