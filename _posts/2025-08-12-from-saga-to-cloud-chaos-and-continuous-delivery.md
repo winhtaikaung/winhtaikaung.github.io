@@ -20,7 +20,7 @@ Setting up the initial Node.js workflow was straightforward. But the first real 
 
 However, a different kind of challenge was brewing. One of our team members had gone silent. Deadlines wait for no one, so we made the tough call to press on, documenting our progress and communication meticulously in Microsoft Teams. It was our first lesson in project management: adapt and keep moving.
 
-![Our Git commits](./assets/2025-08-12-from-saga-to-cloud-chaos-and-continuous-delivery/githubactions.png)
+![Our Git commits](../../assets/2025-08-12-from-saga-to-cloud-chaos-and-continuous-delivery/githubactions.png)
 *(Image: A conceptual view of a Cloud SQL instance configuration in the GCP console.)*
 
 Our Docker Commits 
@@ -118,15 +118,15 @@ This is where our diligence paid off. We had a clear, auditable trail of our ent
 This project was so much more than deploying an application. It was a crash course in the entire DevOps lifecycle. We learned the power of containerization with Docker, the scalability and complexity of GCP, and the sheer elegance of a well-oiled CI/CD pipeline. But the most important lessons were about teamwork. We learned how to navigate challenges, the critical importance of documenting everything, and how to build a resilient workflow that could withstand not just technical bugs, but human error as well. We went in as students; we came out as a deployment team.
 
 
-![Screen Shot of our Application Console on GCP](./assets/2025-08-12-from-saga-to-cloud-chaos-and-continuous-delivery/gcp.png)(GCP console that deployed our app)
+![Screen Shot of our Application Console on GCP](../../assets/2025-08-12-from-saga-to-cloud-chaos-and-continuous-delivery/gcp.png)(GCP console that deployed our app)
 
-![Screen Shot of our commits ](./assets/2025-08-12-from-saga-to-cloud-chaos-and-continuous-delivery/gitlog.png)(Some of us pushed directly , yes we are still learning ha ha )
+![Screen Shot of our commits ](../../assets/2025-08-12-from-saga-to-cloud-chaos-and-continuous-delivery/gitlog.png)(Some of us pushed directly , yes we are still learning ha ha )
 
 ### Short Notes 
 
 Even though I got marks for project , I was not able to use the GCP credit because my account was from Myanmar and they cannot accept my payment verifications . But I dont let it to become a show stopper , I spend abit out of my pocket that is just a cup of cappucino at Happy Goat.
 
-![Screen Shot of my Bill ](./assets/2025-08-12-from-saga-to-cloud-chaos-and-continuous-delivery/bills.png)(Glad that I am able to pay the bills )
+![Screen Shot of my Bill ](../../assets/2025-08-12-from-saga-to-cloud-chaos-and-continuous-delivery/bills.png)(Glad that I am able to pay the bills )
 
 
 
