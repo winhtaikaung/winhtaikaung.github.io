@@ -8,6 +8,9 @@ tags: [Binary,NumberSystem, CS]
 pin: false
 math: true
 mermaid: true
+image:
+  path: https://images.unsplash.com/photo-1718306201865-cae4a08311fe
+  alt: Abacus
  
 ---
 
