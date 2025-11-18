@@ -2,7 +2,7 @@
 title:  From Docker to the Cloud , A Group Project Saga of Code, Chaos, and Continuous Delivery
 description: About Docker to Cloud Deployment, Saga of Code , Chaos and Continuous Delivery. 
 author: winhtaikaung 
-date: 2025-08-11 11:33:00 +0800
+date: 2035-08-11 11:33:00 +0800
 categories: [Javascript]
 tags: [DevOps,Docker,GroupProject,Chaos,Teamwork]
 pin: true
