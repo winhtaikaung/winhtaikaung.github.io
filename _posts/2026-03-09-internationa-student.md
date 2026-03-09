@@ -82,5 +82,4 @@ The tool that should have elevated them had, in the wrong hands, hollowed them o
 
 **Updates** The university campus in our town will be shutting down in this Falls. 
 
-
 **Disclaimer** I used Claude to edit my grammatical errors to smoothen some sentences of this post and replace long dash with spaces.
