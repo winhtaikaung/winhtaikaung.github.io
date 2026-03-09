@@ -13,6 +13,7 @@ image:
   alt: man-walking-inside-building-going-on-escalator
  
 ---
+
 # From Bedok Reservoir to Canada: My Experience with an Immigration College
 
 *Disclaimer: This is based solely on my personal experience. My intention is to inform and raise awareness among future international students who are considering immigration pathways through Canadian colleges.*
