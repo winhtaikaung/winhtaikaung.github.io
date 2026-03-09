@@ -3,7 +3,7 @@ title:  From Bedok Reservoir to Canada: My Experience with an Immigration Colleg
 description: A Myanmar software engineer's honest account of chasing safety, paying for promises, and discovering what happens when education becomes a transaction.
 author: winhtaikaung 
 date: 2026-03-09 11:33:00 +0800
-categories: [CS]
+categories: [Life, Canada, Education]
 tags: [Canada, Life, Professional to Student]
 pin: true
 math: true
