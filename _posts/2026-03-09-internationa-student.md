@@ -70,7 +70,7 @@ Here is the new section, polished and ready to slot into your story:
 
 ## The Rise of the AI God and the Hallucination of Learning
 
-I personally use AI tools extensively vibe-coding, running experiments, exploring new ideas. But I use AI as a thinking partner, worker not a decision-maker. I cross-check my thoughts with it, challenge its outputs, and ultimately make the calls myself. Used this way, AI-assisted learning is genuinely game-changing; it can compress years of trial and error into meaningful, accelerated growth.
+I personally use AI tools extensively vibe-coding, running experiments, exploring new ideas. But I use AI as a thinking partner, worker not a decision-maker. I cross-check my thoughts with it, challenge its outputs, and ultimately make the calls myself. Used this way, AI-assisted learning is genuinely game-changing; it can compress years of trial and error into meaningful, accelerated growth. I draw a firm boundary when it comes to AI particularly in validating my own understanding of things.
 
 What I witnessed among some students, however, was something very different.
 
@@ -79,3 +79,6 @@ Rather than treating AI as a tool, they worshipped it like a god one that would 
 This is what I call the hallucination of learning the illusion of knowledge without the substance beneath it. AI gave them the appearance of competence, but robbed them of the struggle that builds real understanding. Over time, that gap between what they appeared to know and what they actually knew bred either apathy or quiet insecurity. Some disengaged entirely. Others kept going through the motions, producing AI-generated work while growing increasingly disconnected from the craft they were supposedly studying.
 
 The tool that should have elevated them had, in the wrong hands, hollowed them out instead.
+
+
+**Disclaimer** I used Claude to edit my grammatical errors to smoothen some sentences of this post and replace long dash with spaces.
