@@ -1,5 +1,5 @@
 ---
-title:  From Bedok Reservoir to Canada: My Experience with an Immigration College
+title:  From Bedok Reservoir to Canada - My Experience with an Immigration College
 description: A Myanmar software engineer's honest account of chasing safety, paying for promises, and discovering what happens when education becomes a transaction.
 author: winhtaikaung 
 date: 2026-03-09 11:33:00 +0800
@@ -9,7 +9,8 @@ pin: true
 math: true
 mermaid: true
 image:
-  path: https://images.unsplash.com/photo-1562873516-80bd6aa6e810
+#  path: https://images.unsplash.com/photo-1562873516-80bd6aa6e810
+  path: https://images.unsplash.com/photo-1718306201865-cae4a08311fe 
   alt: man-walking-inside-building-going-on-escalator
  
 ---
