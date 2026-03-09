@@ -66,8 +66,6 @@ Someone might say, "You get what you pay for what did you expect?" Perhaps. But 
 
 What saddens me most is that many of these students paid $25,000 from their personal savings, their parents' funds, or borrowed money and some still have to send remittances back home while studying. They deserve far better than what they received.
 
-Here is the new section, polished and ready to slot into your story:
-
 ---
 
 ## The Rise of the AI God and the Hallucination of Learning
