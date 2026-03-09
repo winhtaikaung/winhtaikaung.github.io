@@ -9,9 +9,9 @@ pin: true
 math: true
 mermaid: true
 image:
-#  path: https://images.unsplash.com/photo-1562873516-80bd6aa6e810
-  path: https://images.unsplash.com/photo-1718306201865-cae4a08311fe 
-  alt: man-walking-inside-building-going-on-escalator
+ path: https://images.unsplash.com/photo-1562873516-80bd6aa6e810
+  # path: https://images.unsplash.com/photo-1718306201865-cae4a08311fe 
+ alt: man-walking-inside-building-going-on-escalator
  
 ---
 
