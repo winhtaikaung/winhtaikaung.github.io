@@ -1,9 +1,9 @@
 ---
 title:  TIL - Reclaiming 160 GB from WSL2's Hidden Disk File
-description: A Myanmar software engineer's honest account of chasing safety, paying for promises, and discovering what happens when education becomes a transaction.
+description: Today I Learned that deleting files inside WSL2 doesn't shrink your Windows disk usage — and one PowerShell command fixes it
 author: winhtaikaung 
-date: 2026-03-09 11:33:00 +0800
-categories: [Life, Canada, Education]
+date: 2026-06-06 11:33:00 +0800
+categories: [Windows 11, TroubleShooting]
 tags: [WSL2, Windows 11, Hyper-V t,Disk Management]
 pin: false
 math: true
