@@ -1,6 +1,6 @@
 ---
-title:  Learning Notes - 🐧 Linux Process 
-description: Linux Processes & Memory Management Notes 🐧
+title:  Learning Notes -🐧 Linux Process
+description: Linux Processes & Memory Management Notes 
 author: winhtaikaung 
 date: 2026-06-06 11:33:00 +0800
 categories: [Operating Systems, Linux]
@@ -10,14 +10,14 @@ math: true
 mermaid: true
 image:
  path: https://images.unsplash.com/photo-1704026437278-77f1db74859c
- alt: hdd-grayscale
+ alt: memory
 author: win
 ---
 
-# Preface
-Luckily I have received some calls these days and as always I wasn't lucky enough to hook first opportunity. I have been switching my hats to Platform Reliability Engineer and System Administration path for almost 2 years. However I wasn't paying attention to learn details due to errands and family migration process. So Long story short I got interview for sysadmin and cloud engineering role. They are very happy with my cloud engineering skills ,TOIL reduction initiatives and that lasted before this question "Can you elaborate how a binary file from disk become a process". I froze at first, I understand only very high level yea but I only have limited understandings. However I don't like to bluff that I don't know. 
+# Cry over spilled milk
+Luckily I have received some calls these days after my intern was complete and as always I wasn't lucky enough to hook first opportunity. I have been switching my hats to Platform Reliability Engineer and System Administration path for almost 2 years. However I wasn't paying attention to learn details due to errands and family migration process. So Long story short I got interview for sysadmin and cloud engineering role. They are very happy with my cloud engineering skills ,TOIL reduction initiatives and that lasted before this question "Can you elaborate how a binary file from disk become a process". I froze at first, I understand only very high level yea but I only have limited understandings. However I don't like to bluff that I don't know. 
 
-Like we play games , if you killed a hero you will get gold & xp,if you got killed you got xp anyways its gain for me. So as soon as I left the interview room I was in a shock that I have read some of the OS 3 Easypieces(trust me it is not easy book to read) however I couldn't explain(sad) clearly. One of my friend told me once "If you can't explain something to other person, it means you are not fluent it that subject." Thats why I wrote this just to explain myself and verify my understandings. Lets get our hands dirty.
+Like we play games , **if you killed a hero you will get gold & xp,if you got killed you got xp anyways its gain for me as I have nothing to lose**. So as soon as I left the interview room I was in a shock that I have read some of the OS 3 Easypieces(trust me it is not easy book to read) however I couldn't explain(sad) clearly. One of my friend told me once "**If you can't explain something to other person, it means you are not fluent it that subject.**" Thats why I wrote this just to explain myself and verify my understandings. Lets get our hands dirty.
 
 ## 1. Program vs. Process
 First, It is crucial to understand the difference between a program and a process.
@@ -291,7 +291,14 @@ ubuntu@linux-lab-1-pce:~/Documents$ cat /proc/$PID/maps
 ```
 ***
 
+## References & Books That I used to write this article  
 
+**man 5 proc** (Read the section specifically covering /proc/[pid]/maps).
 
+**The Linux Programming Interface** by Michael Kerrisk (Chapter 6)
+
+Ofcourse I used AI to understand some concepts.
+
+Cheers 
 
 
