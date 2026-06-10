@@ -10,7 +10,6 @@ math: true
 mermaid: true
 image:
  path: https://images.unsplash.com/photo-1704026437278-77f1db74859c
-
  alt: hdd-grayscale
 author: win
 ---
@@ -65,7 +64,7 @@ Low Memory Address
 
 Quick Tips: The easist way to check whether your programs stack is growing downward or upwards by doing this 
 
-```C
+```c
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -117,7 +116,7 @@ However when it comes to heap allocation the heap address of ptr2 `0x5a90991116d
 When you compile a C program, you can use the `size` command to see how much memory the different segments take up.
 
 **The C Program**
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
