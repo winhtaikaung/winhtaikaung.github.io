@@ -11,6 +11,7 @@ mermaid: true
 image:
  path: https://images.unsplash.com/photo-1704026437278-77f1db74859c
  alt: memory
+ 
 author: win
 ---
 
