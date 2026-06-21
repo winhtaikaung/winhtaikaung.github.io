@@ -219,7 +219,7 @@ This mechanism is why `fork()` is incredibly fast and memory-efficient, even for
 
 Why do we usually call `fork()` immediately followed by `execve()`? 
 Because of **Copy-on-Write**, if the child calls `execve()` immediately, the new program destroys the old memory segments (text, data, stack, heap) and replaces them with the new program's segments. 
-*Result:* The kernel **never actually had to physically copy the memory pages** because the child never wrote to them! This makes the `fork()` + `execve()` combination incredibly fast and memory-efficient.
+<!-- *Result:* The kernel **never actually had to physically copy the memory pages** because the child never wrote to them! This makes the `fork()` + `execve()` combination incredibly fast and memory-efficient. -->
 
 ***
 
@@ -286,12 +286,7 @@ int main(int argc, char *argv[]) {
 gcc -o fork_exec_demo fork_exec_demo.c
 ./fork_exec_demo
 ```
-You will see the `ls` commands output generated along with process informations. Lets see how it could be breaking down using `strace`.
-
-
-
-
-This `strace` log is a fantastic real-world demonstration of how the C standard library (glibc) maps standard C functions to underlying Linux system calls, and how the process hierarchy and signals operate in practice. 
+You will see the `ls` commands output generated along with process informations.  Lets see how it could be breaking down using `strace`. 
 
 ```bash
 strace -f -e trace=process sh -c './fork_exec_demo'
@@ -330,7 +325,8 @@ vfork(strace: Process 21849 attached
 Child: My PID is 21850. I am about to execve()!
 Parent: Forked child with PID 21850. Waiting for child to finish...
 ```
-*   **`wait4`**: PID 21848 (`sh`) is now blocked in `wait4()` (the underlying syscall for the C `wait()` function), waiting for PID 21849 to finish. *(Note: strace interleaves the stdout printfs with the syscalls, which is why you see "Parent: My PID..." mixed with the `wait4` call).*
+*   **`wait4`**: PID 21848 (`sh`) is now blocked in `wait4()` (the underlying syscall for the C `wait()` function), waiting for PID 21849 to finish.
+ <!-- *(Note: strace interleaves the stdout printfs with the syscalls, which is why you see "Parent: My PID..." mixed with the `wait4` call).* -->
 *   **`clone`**: Your program (PID 21849) calls the C library `fork()`. Under the hood, glibc implements `fork()` using the `clone()` system call. The flags `CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD` are standard glibc flags to ensure proper thread/process cleanup and signal delivery. It creates PID 21850.
 *   **Printfs**: The child and parent print their respective messages.
 
@@ -377,7 +373,7 @@ exit_group(0)                           = ?
 
 ***
 
-### 3. Key TLPI Takeaways from this Trace
+### 3. Key Takeaways from this Trace
 
 1.  **glibc `fork()` vs Linux `clone()`**: In TLPI, you learn that `fork()` is a standard C library function. This trace proves that on Linux, glibc implements `fork()` by invoking the `clone()` system call with specific flags (`SIGCHLD`, `CLONE_CHILD_SETTID`, etc.) to mimic standard POSIX `fork()` semantics.
 2.  **`vfork()` Optimization**: The trace shows `sh` using `vfork()`. As TLPI explains, `vfork()` suspends the parent until the child calls `execve` or `_exit`. This is a massive performance optimization because it avoids duplicating the parent's page tables.
@@ -391,8 +387,10 @@ exit_group(0)                           = ?
 
 
 **The Linux Programming Interface** by Michael Kerrisk (Chapter 6,24.1,24.2.1)
-
-
+ [vfork](https://www.man7.org/linux/man-pages/man2/vfork.2.html)
+ [wait](https://www.man7.org/linux/man-pages/man2/wait.2.html)
+ [SIGCHILD](https://www.man7.org/linux/man-pages/man7/signal.7.html)
+ [LWN.net](https://lwn.net/Articles/631631/ )
 
 Cheers 
 
