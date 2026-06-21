@@ -1,7 +1,7 @@
 ---
 title:  Learning Notes -🐧 Linux Process
 description: Linux Processes & Memory Management Notes 
-author: win 
+author: win
 date: 2026-06-06 11:33:00 +0800
 categories: [Operating Systems, Linux]
 tags: [Linux, OS, Process]
