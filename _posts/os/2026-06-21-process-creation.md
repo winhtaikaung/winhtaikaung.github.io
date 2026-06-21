@@ -1,7 +1,7 @@
 ---
 title:  Learning Notes -🐧 How Linux Process were created
 description: Linux Processes Creation 
-author: winhtaikaung 
+author: win 
 date: 2026-06-21 11:33:00 +0800
 categories: [Operating Systems, Linux, Process]
 tags: [Linux, OS, Process]
