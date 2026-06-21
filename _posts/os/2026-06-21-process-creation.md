@@ -12,8 +12,6 @@ image:
  path: https://images.unsplash.com/photo-1622204861143-604843f106f3
  alt: bird eye view carpark
  
-author: win
-
 ---
 
 # How Linux Process were created 
