@@ -429,5 +429,3 @@ The thing that finally made fan-out click for me wasn't a textbook definition  i
 ### Very Good Discussion link on google forum
 
 https://discuss.google.dev/t/the-problem-of-sql-fanouts/119220
-
----
