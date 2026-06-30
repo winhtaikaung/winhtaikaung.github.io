@@ -390,7 +390,7 @@ It's not the most exciting SQL you'll ever write, but it's the pattern that turn
  
 The thing that finally made fan-out click for me wasn't a textbook definition  it was realizing a JOIN never actually "adds information to a row." It builds a new, wider table out of every combination of matches. Whether that combination is the one you wanted is entirely on you to check, every single time, with nothing more sophisticated than `COUNT(*)` and a calculator. Once that idea sits in your head, these bugs stop being scary and start being a five-minute diagnosis.
  
----
+
  
 ## Quick-Reference Cheat Sheet
  
@@ -426,7 +426,8 @@ The thing that finally made fan-out click for me wasn't a textbook definition  i
 - ⚠️ Assuming AVG being "correct" means the query is bug-free.
 - ⚠️ Fixing fan-out by adding `DISTINCT` to the whole query instead of fixing the JOIN  this hides the bug instead of solving it, and breaks the moment two real rows happen to look alike.
 
-
 ### Very Good Discussion link on google forum
 
 https://discuss.google.dev/t/the-problem-of-sql-fanouts/119220
+
+---
