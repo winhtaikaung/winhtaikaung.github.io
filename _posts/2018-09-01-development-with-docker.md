@@ -5,7 +5,7 @@ author: winhtaikaung
 date: 2018-09-01 11:33:00 +0800
 categories: [Containers]
 tags: [Docker,Development,Tools]
-pin: true
+pin: false
 math: true
 mermaid: true
  

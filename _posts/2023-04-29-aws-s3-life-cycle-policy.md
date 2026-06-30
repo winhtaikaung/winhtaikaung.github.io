@@ -5,7 +5,7 @@ author: winhtaikaung
 date: 2023-04-29 11:33:00 +0800
 categories: [AWS, S3]
 tags: [aws,storage,object storage,lifecycle policy]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

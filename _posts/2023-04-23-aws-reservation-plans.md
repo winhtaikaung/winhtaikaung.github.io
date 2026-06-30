@@ -5,7 +5,7 @@ author: winhtaikaung
 date: 2023-04-23 11:33:00 +0800
 categories: [AWS, Reservation]
 tags: [aws,cost saving,cloud cost]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

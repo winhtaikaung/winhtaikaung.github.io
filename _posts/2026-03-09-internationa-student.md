@@ -5,7 +5,7 @@ author: winhtaikaung
 date: 2026-03-09 11:33:00 +0800
 categories: [Life, Canada, Education]
 tags: [Canada, Life, Professional to Student]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:
