@@ -416,7 +416,7 @@ The thing that finally made fan-out click for me wasn't a textbook definition  i
 - **Kill duplicate-prone subqueries.** Replace `WHERE id IN (SELECT ... JOIN ...)` with `EXISTS` or add `DISTINCT`.
 - **One key, one JOIN.** If you see two+ tables joining on the same foreign key, assume cross-multiplication until proven otherwise.
 
- ### Pitfalls
+### Pitfalls
 - ⚠️ Joining multiple one-to-many tables directly to the same parent (the #1 cause of fan-out).
 - ⚠️ Leaving a leftover JOIN in a query after refactoring, with no columns used from it.
 - ⚠️ Using `INNER JOIN` when some parent rows may have zero matches  silently deletes those rows.
@@ -427,6 +427,6 @@ The thing that finally made fan-out click for me wasn't a textbook definition  i
 - ⚠️ Fixing fan-out by adding `DISTINCT` to the whole query instead of fixing the JOIN  this hides the bug instead of solving it, and breaks the moment two real rows happen to look alike.
 
 
-Very Good Discussion link on google forum
+### Very Good Discussion link on google forum
 
 https://discuss.google.dev/t/the-problem-of-sql-fanouts/119220
