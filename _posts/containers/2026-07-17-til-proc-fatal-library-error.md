@@ -1,5 +1,5 @@
 ---
-title:   Today I Learned: Why unshare --pid Throws a 'fatal library error, lookup self'
+title:   Today I Learned Why unshare --pid Throws a 'fatal library error, lookup self'
 description: proc file system and unshare command
 author: win
 date: 2026-07-15 11:33:00 +0800
