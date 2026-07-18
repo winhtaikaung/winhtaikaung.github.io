@@ -70,7 +70,8 @@ I was curious about what the `unshare` CLI tool does differently than a simple C
 
 ### The Strace Comparison
 When I ran a simple C program that only called `unshare(CLONE_NEWNS)`, the logs were very short. 
-```C
+
+```c
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
@@ -142,7 +143,7 @@ execve("/usr/local/sbin/bash", ["bash"], 0x7ffcf6e49a28 /* 13 vars */) = -1 ENOE
 
 ### Code To fix to mimic exact behaviour of `unshare` 
 
-```C
+```c
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
