@@ -171,7 +171,8 @@ int main() {
 
 ### Why This Matters
 This extra `mount` call is the secret of container isolation:
-*   **MS_REC | MS_PRIVATE:** This changes the root mount (`/`) to "Private." By default, Linux mounts are "Shared," meaning if you mount a USB drive inside your container, the host would see it too. Setting this to `MS_PRIVATE` ensures that any mount changes you make inside your new namespace stay **completely isolated** from the host.
+*   **MS_REC /  MS_PRIVATE:** This changes the root mount (`/`) to "Private." By default, Linux mounts are "Shared," meaning if you mount a USB drive inside your container, the host would see it too. Setting this to `MS_PRIVATE` ensures that any mount changes you make inside your new namespace stay **completely isolated** from the host.
+  
 *   **The Missing Piece:** A basic `unshare()` call in C or Python doesn't do this automatically. If you want to build a true container from scratch, you have to manually perform this `mount` syscall to prevent "leaking" mount points between the host and the container.
 
 ---
