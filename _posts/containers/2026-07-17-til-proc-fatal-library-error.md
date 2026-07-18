@@ -65,48 +65,152 @@ This fresh `/proc` is explicitly tied by the kernel to your **new PID namespace*
 
 ---
 
+## 🕵️‍♂️ Deep Dive: What `unshare` Does Behind the Scenes
+I was curious about what the `unshare` CLI tool does differently than a simple C program calling `unshare()`. By using `strace`, I found some fascinating differences.
+
+### The Strace Comparison
+When I ran a simple C program that only called `unshare(CLONE_NEWNS)`, the logs were very short. 
+```C
+#define _GNU_SOURCE
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sched.h>
+#include <sys/wait.h>
+#include <errno.h>
+
+int main() {
+    // 1. Unshare the mount namespace (equivalent to syscall.Unshare(syscall.CLONE_NEWNS))
+    if (unshare(CLONE_NEWNS) != 0) {
+        perror("unshare failed");
+        return EXIT_FAILURE;
+    }
+
+    // 2. Fork the process
+    pid_t pid = fork();
+    if (pid < 0) {
+        perror("fork failed");
+        return EXIT_FAILURE;
+    }
+
+    if (pid == 0) {
+        // --- Child Process ---
+
+        // Prepare arguments for bash
+        char *argv[] = {"bash", NULL};
+
+        // Execute bash.
+        // This automatically inherits stdin, stdout, stderr, and the environment.
+        execvp("bash", argv);
+
+        // If execvp returns, it means it failed
+        perror("execvp failed");
+        exit(EXIT_FAILURE);
+    } else {
+        // --- Parent Process ---
+
+        int status;
+        // Wait for the child process (bash) to finish
+        if (waitpid(pid, &status, 0) < 0) {
+            perror("waitpid failed");
+            return EXIT_FAILURE;
+        }
+
+        // Return the exact exit code that bash returned
+        if (WIFEXITED(status)) {
+            return WEXITSTATUS(status);
+        }
+
+        return EXIT_FAILURE;
+    }
+}
+```
+---
+```bash
+munmap(0x72dd064ff000, 24419)           = 0
+unshare(CLONE_NEWNS)                    = 0          <------------------------
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x72dd064fca10) = 16024
+```
+
+However, when I ran `sudo strace unshare --mount bash`, I saw this immediately after the `unshare` syscall:
+
+```bash
+unshare(CLONE_NEWNS)                    = 0
+mount("none", "/", NULL, MS_REC|MS_PRIVATE, NULL) = 0                                <------------------------
+execve("/usr/local/sbin/bash", ["bash"], 0x7ffcf6e49a28 /* 13 vars */) = -1 ENOENT (No such file or directory)
+```
+
+### Code To fix to mimic exact behaviour of `unshare` 
+
+```C
+#define _GNU_SOURCE
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sched.h>
+#include <sys/wait.h>
+#include <sys/mount.h>
+#include <errno.h>
+
+int main() {
+    // 1. Unshare the mount namespace
+    if (unshare(CLONE_NEWNS) != 0) {
+        perror("unshare failed");
+        return EXIT_FAILURE;
+    }
+
+    // 2. Make the root mount private (mimics unshare --mount behavior)
+    // This prevents mount events from propagating between the host and this namespace.
+    if (mount(NULL, "/", NULL, MS_REC | MS_PRIVATE, NULL) != 0) {
+        perror("mount --make-rprivate / failed");
+        return EXIT_FAILURE;
+    }
+    // ...all remaining codes are the same
+```
+
+### Why This Matters
+This extra `mount` call is the secret of container isolation:
+*   **MS_REC | MS_PRIVATE:** This changes the root mount (`/`) to "Private." By default, Linux mounts are "Shared," meaning if you mount a USB drive inside your container, the host would see it too. Setting this to `MS_PRIVATE` ensures that any mount changes you make inside your new namespace stay **completely isolated** from the host.
+*   **The Missing Piece:** A basic `unshare()` call in C or Python doesn't do this automatically. If you want to build a true container from scratch, you have to manually perform this `mount` syscall to prevent "leaking" mount points between the host and the container.
+
+---
+
 ## 🗺️ Visualizing the Interaction
 
 ```mermaid
 flowchart TD
-    subgraph HostSystem ["🖥️ Host System"]
+    subgraph Host System ["🖥️ Host System"]
         HostProc["Host /proc filesystem\n(Contains /proc/1, /proc/7890, etc.)"]
-        HostInit["Host Init/Systemd\n(Actual PID 1)"]
         HostShell["Host Shell\n(Actual PID 7890)"]
-        
-        HostInit -->|registered in| HostProc
         HostShell -->|registered in| HostProc
     end
 
-    subgraph ScenarioA ["❌ Scenario A: unshare --pid (The Mismatch)"]
-        direction TB
+    subgraph Scenario A ["❌ Scenario A: unshare --pid (The Mismatch)"]
         NewNS_A["New PID Namespace"]
         Shell_A["New Shell\n(Thinks it is PID 1)"]
-        ErrorA["⚠️ MISMATCH: Shell expects PID 1,\nbut gets Host PID 7890.\nLeads to 'lookup self' error."]
         
         NewNS_A --> Shell_A
         Shell_A -.->|Queries /proc/self| HostProc
         HostProc -.->|Returns| HostProc7890["Host's /proc/7890"]
-        Shell_A -.->|Result| ErrorA
+        
+        Shell_A -.->|Result| ErrorA["⚠️ MISMATCH: Shell expects PID 1,\nbut gets Host PID 7890.\nLeads to 'lookup self' error."]
     end
 
-    subgraph ScenarioB ["✅ Scenario B: unshare --pid --mount-proc (The Solution)"]
-        direction TB
+    subgraph Scenario B ["✅ Scenario B: unshare --pid --mount-proc (The Solution)"]
         NewNS_B["New PID Namespace"]
         NewMountNS["New Mount Namespace"]
         Shell_B["New Shell\n(Is PID 1)"]
         FreshProc["Fresh /proc filesystem\n(Contains only /proc/1, etc.)"]
-        Success["✅ MATCH: Shell is PID 1,\nand /proc/self correctly\nresolves to /proc/1."]
         
         NewNS_B --> Shell_B
         NewMountNS --> FreshProc
         Shell_B -.->|Queries /proc/self| FreshProc
         FreshProc -.->|Returns| FreshProc1["New /proc/1"]
-        Shell_B -.->|Result| Success
+        
+        Shell_B -.->|Result| Success["✅ MATCH: Shell is PID 1,\nand /proc/self correctly\nresolves to /proc/1."]
     end
 
-    HostSystem ~~~ ScenarioA
-    HostSystem ~~~ ScenarioB
+
 ```
 
 ---
@@ -123,4 +227,5 @@ Here are the official references for the concepts covered in the article:
 2.  **PID Namespaces Specifics**: `man 7 pid_namespaces` – Detailed documentation on how process IDs are isolated and how the `/proc` filesystem interacts with PID namespaces.
 3.  **The `unshare` Utility**: `man 1 unshare` – The manual for the command-line tool used to run programs with some namespaces unshared from the parent, including the critical `--mount-proc` flag.
 4.  **Proc Filesystem**: `man 5 proc` – Documentation on the pseudo-filesystem that provides an interface to kernel data structures, specifically how it exposes process information via `/proc/[pid]`.
+5.  **LWN.net - Mount namespaces and shared subtrees** : https://lwn.net/Articles/689856
 
