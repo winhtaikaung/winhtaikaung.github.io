@@ -22,7 +22,7 @@ But if you ran this command:
 ```bash
 sudo unshare --fork --pid /bin/bash
 ```
-...and then tried to run a basic command like `ps aux` or `ls -l /proc/self`, you likely crashed headfirst into this cryptic error:
+...and then tried to run a basic command `ps aux`  you likely crashed headfirst into this cryptic error:
 
 > `fatal library error, lookup self`
 
@@ -32,6 +32,8 @@ At first glance, this looks like a broken . But it’s actually practical demons
 
 ## 🔍 The Mystery: What is `/proc`?
 To understand the error, you first need to understand `/proc`. It is not a real folder on your hard drive. It is a **pseudo-filesystem** generated dynamically in RAM by the Linux kernel. It acts as a real-time window into the kernel's internal data structures, most notably exposing running processes as directories named after their Process IDs (e.g., `/proc/1`, `/proc/7890`).
+
+You can check the symlink inside new namespace `ls -l /proc/self` without mount-proc and mount-proc. You will observe the difference.
 
 Crucially, `/proc/self` is a special symlink that always points to the directory of the process that is currently accessing it.
 
